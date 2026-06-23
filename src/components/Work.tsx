@@ -1,7 +1,14 @@
+import { useRef } from 'react'
 import { caseStudies, type CaseStudy, type Metric } from '../lib/content'
 import { caseWireframes } from './Schematics'
 import { Section } from './Section'
 import { Reveal } from './Reveal'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useGSAP } from '@gsap/react'
+import SplitType from 'split-type'
+
+gsap.registerPlugin(useGSAP, ScrollTrigger)
 
 function FieldBlock({ label, text }: { label: string; text: string }) {
   return (
@@ -16,7 +23,6 @@ function FieldBlock({ label, text }: { label: string; text: string }) {
 }
 
 function MetricCell({ metric, wide }: { metric: Metric; wide: boolean }) {
-  // Big when it's a compact figure; medium display for transformation phrases.
   const isFigure = /\d/.test(metric.value) && metric.value.length <= 6
   return (
     <div className={`bg-surface px-5 py-6 ${wide ? 'sm:col-span-2' : ''}`}>
@@ -29,12 +35,78 @@ function MetricCell({ metric, wide }: { metric: Metric; wide: boolean }) {
 }
 
 function CaseStudyView({ study, index }: { study: CaseStudy; index: number }) {
+  const container = useRef<HTMLElement>(null)
   const Wire = caseWireframes[study.id]
   const reverse = index % 2 === 1
   const single = study.metrics.length === 1
 
+  useGSAP(() => {
+    if (!container.current) return
+
+    // Clip path reveal on the article
+    gsap.fromTo(container.current, 
+      { clipPath: "inset(20% 0 100% 0)", opacity: 0.5 },
+      { 
+        clipPath: "inset(0% 0 0% 0)", 
+        opacity: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: container.current,
+          start: "top 85%",
+          end: "top 40%",
+          scrub: 1
+        }
+      }
+    )
+
+    // Parallax and blur on the figure
+    const figure = container.current.querySelector('figure')
+    if (figure) {
+      gsap.fromTo(figure, 
+        { scale: 0.9, filter: "blur(10px)" },
+        {
+          scale: 1,
+          filter: "blur(0px)",
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: figure,
+            start: "top 95%",
+            end: "top 50%",
+            scrub: true
+          }
+        }
+      )
+    }
+
+    // Text lines reveal for title
+    const title = container.current.querySelector('h3')
+    if (title) {
+      const split = new SplitType(title, { types: 'lines' })
+      if (split.lines) {
+        split.lines.forEach(line => {
+          const wrapper = document.createElement('div')
+          wrapper.style.overflow = 'hidden'
+          line.parentNode?.insertBefore(wrapper, line)
+          wrapper.appendChild(line)
+        })
+        gsap.from(split.lines, {
+          yPercent: 125,
+          rotate: 2.5,
+          duration: 1.2,
+          ease: "power3.out",
+          stagger: 0.1,
+          scrollTrigger: {
+            trigger: container.current,
+            start: "top 75%",
+            toggleActions: "play none none reverse"
+          }
+        })
+      }
+    }
+  }, { scope: container })
+
   return (
-    <article className="border-t border-line pt-12 first:border-0 first:pt-0">
+    <article ref={container} className="border-t border-line pt-12 first:border-0 first:pt-0 pb-16">
       <header className="flex flex-wrap items-baseline justify-between gap-x-8 gap-y-3">
         <div>
           <p className="t-kicker tnum text-graphite">Studi Kasus {study.index}</p>
@@ -45,19 +117,13 @@ function CaseStudyView({ study, index }: { study: CaseStudy; index: number }) {
       </header>
 
       <div className="mt-9 lg:grid lg:grid-cols-12 lg:items-start lg:gap-x-10">
-        {/* Narrative fields */}
-        <div
-          className={`space-y-6 lg:col-span-7 ${reverse ? 'lg:order-2' : 'lg:order-1'}`}
-        >
+        <div className={`space-y-6 lg:col-span-7 ${reverse ? 'lg:order-2' : 'lg:order-1'}`}>
           <FieldBlock label="Latar Belakang" text={study.background} />
           <FieldBlock label="Tantangan" text={study.challenge} />
           <FieldBlock label="Solusi Kami" text={study.solution} />
         </div>
 
-        {/* Data is the hero: metrics first, then the figure */}
-        <div
-          className={`mt-10 lg:col-span-5 lg:mt-0 ${reverse ? 'lg:order-1' : 'lg:order-2'}`}
-        >
+        <div className={`mt-10 lg:col-span-5 lg:mt-0 ${reverse ? 'lg:order-1' : 'lg:order-2'}`}>
           <dl className="grid grid-cols-1 gap-px border border-line bg-line sm:grid-cols-2">
             {study.metrics.map((m) => (
               <MetricCell key={m.label} metric={m} wide={single} />
@@ -72,9 +138,9 @@ function CaseStudyView({ study, index }: { study: CaseStudy; index: number }) {
           </p>
 
           {Wire && (
-            <figure className="mt-7 border border-line bg-surface">
+            <figure className="mt-7 border border-line bg-surface overflow-hidden">
               <div className="relative flex aspect-[16/10] items-center justify-center p-5 text-graphite/45">
-                <span className="t-cap absolute left-3 top-3 text-graphite">
+                <span className="t-cap absolute left-3 top-3 text-graphite z-10">
                   skematik
                 </span>
                 <Wire className="h-full w-full" />
@@ -93,17 +159,16 @@ function CaseStudyView({ study, index }: { study: CaseStudy; index: number }) {
 export function Work() {
   return (
     <Section id="portofolio" mod="06" label="Portofolio" pad="xl">
-      <h2 className="t-h2">Portofolio</h2>
-      <p className="t-body mt-4 max-w-[58ch] text-graphite">
-        Tiga laporan kerja — latar belakang, tantangan, solusi, dan dampak yang
-        terukur.
-      </p>
+      <Reveal>
+        <h2 className="t-h2">Portofolio</h2>
+        <p className="t-body mt-4 max-w-[58ch] text-graphite">
+          Tiga laporan kerja — latar belakang, tantangan, solusi, dan dampak yang terukur.
+        </p>
+      </Reveal>
 
       <div className="mt-12 space-y-14">
         {caseStudies.map((study, i) => (
-          <Reveal key={study.id}>
-            <CaseStudyView study={study} index={i} />
-          </Reveal>
+          <CaseStudyView key={study.id} study={study} index={i} />
         ))}
       </div>
     </Section>

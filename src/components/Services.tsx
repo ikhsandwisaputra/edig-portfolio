@@ -1,13 +1,18 @@
-import { useId, useState } from 'react'
+import { useId, useState, useRef } from 'react'
 import { services, type Service } from '../lib/content'
 import { serviceSchematics } from './Schematics'
 import { Section } from './Section'
+import { gsap } from 'gsap'
+import { useGSAP } from '@gsap/react'
+import SplitType from 'split-type'
+
+gsap.registerPlugin(useGSAP)
 
 function PlusMinus({ open }: { open: boolean }) {
   return (
     <svg
       width="14"
-    height="14"
+      height="14"
       viewBox="0 0 14 14"
       fill="none"
       stroke="currentColor"
@@ -27,14 +32,56 @@ function ServiceRow({ service }: { service: Service }) {
   const panelId = useId()
   const btnId = useId()
   const Schematic = serviceSchematics[service.id]
+  const rowRef = useRef<HTMLLIElement>(null)
+  const titleRef = useRef<HTMLSpanElement>(null)
+
+  useGSAP(() => {
+    if (!titleRef.current || !rowRef.current) return
+
+    const textSplit = new SplitType(titleRef.current, { types: 'chars' })
+    const chars = textSplit.chars
+    if (!chars) return
+
+    chars.forEach((char) => {
+      const wrapper = document.createElement('span')
+      wrapper.style.overflow = 'hidden'
+      wrapper.style.display = 'inline-block'
+      char.parentNode?.insertBefore(wrapper, char)
+      wrapper.appendChild(char)
+    })
+
+    const hoverAnim = gsap.timeline({ paused: true })
+    hoverAnim.to(chars, {
+      yPercent: -100,
+      duration: 0.3,
+      ease: 'power2.inOut',
+      stagger: 0.015
+    }).set(chars, {
+      yPercent: 100
+    }).to(chars, {
+      yPercent: 0,
+      duration: 0.3,
+      ease: 'power2.out',
+      stagger: 0.015
+    })
+
+    const onEnter = () => hoverAnim.restart()
+    const button = rowRef.current.querySelector('button')
+    button?.addEventListener('mouseenter', onEnter)
+
+    return () => {
+      button?.removeEventListener('mouseenter', onEnter)
+      textSplit.revert()
+    }
+  }, { scope: rowRef })
 
   return (
-    <li className="relative border-b border-line first:border-t">
+    <li ref={rowRef} data-reveal-child className="relative border-b border-line first:border-t group">
       {/* Accent bar that scales in from the left when expanded — no layout shift. */}
       <span
         aria-hidden="true"
         className={`absolute left-0 top-0 h-full w-[2px] origin-top bg-accent transition-transform duration-300 ease-out motion-reduce:transition-none ${
-          open ? 'scale-y-100' : 'scale-y-0'
+          open ? 'scale-y-100' : 'scale-y-0 group-hover:scale-y-100 group-hover:opacity-50'
         }`}
       />
 
@@ -49,22 +96,23 @@ function ServiceRow({ service }: { service: Service }) {
         >
           <span
             className={`t-kicker tnum w-7 shrink-0 transition-colors ${
-              open ? 'text-accent' : 'text-graphite'
+              open ? 'text-accent' : 'text-graphite group-hover:text-ink'
             }`}
           >
             {service.index}
           </span>
-          <span className="t-h3 flex-1 text-ink">{service.title}</span>
+          <span ref={titleRef} className="t-h3 flex-1 text-ink">{service.title}</span>
           {Schematic && (
             <span
+              data-draw
               className={`shrink-0 transition-colors ${
-                open ? 'text-accent' : 'text-ink/65'
+                open ? 'text-accent' : 'text-ink/65 group-hover:text-accent'
               }`}
             >
               <Schematic className="h-9 w-9 sm:h-10 sm:w-10" />
             </span>
           )}
-          <span className={`shrink-0 pl-1 ${open ? 'text-accent' : 'text-graphite'}`}>
+          <span className={`shrink-0 pl-1 transition-colors ${open ? 'text-accent' : 'text-graphite group-hover:text-accent'}`}>
             <PlusMinus open={open} />
           </span>
         </button>
@@ -100,7 +148,7 @@ export function Services() {
         Enam lini solusi teknologi — pilih satu untuk membuka rinciannya.
       </p>
 
-      <ul className="mt-9">
+      <ul data-reveal="group" className="mt-9">
         {services.map((service) => (
           <ServiceRow key={service.id} service={service} />
         ))}
