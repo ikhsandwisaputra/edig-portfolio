@@ -1,0 +1,122 @@
+🚀 Perkenalan Tim: edig developer
+Latar Belakang
+Kami adalah edig developer, divisi pengembang teknologi inti yang merupakan bagian integral dari Ecodigitus. Sebagai startup yang dinamis, kami memiliki fondasi keahlian yang kuat dalam implementasi sistem Enterprise Resource Planning (ERP) berbasis Odoo dan pengembangan Laboratory Information Management System (LIMS) terdepan melalui Ediglab. Tim kami tidak hanya terbatas pada solusi bisnis konvensional; portofolio kami meluas hingga mencakup optimasi visibilitas digital melalui strategi SEO, serta eksplorasi interaktif pada ekosistem kreatif seperti Roblox. Kami hadir sebagai solusi satu pintu untuk berbagai skala kebutuhan pengembangan teknologi.
+
+Visi & Tujuan
+Visi: Menjadi katalisator utama dalam transformasi digital bisnis dengan menghadirkan ekosistem perangkat lunak yang cerdas, terstruktur, dan mudah diakses.
+Tujuan: Mendorong percepatan digitalisasi operasional klien melalui pengembangan sistem terintegrasi dan Content Management System (CMS) yang responsif, andal, dan dirancang untuk merampingkan alur kerja secara efisien.
+
+Nilai Inti (Core Values)
+Untuk mendukung visi dan latar belakang teknis yang beragam, tim edig developer memegang teguh empat prinsip berikut:
+
+Adaptabilitas (Adaptability): Fleksibel dan tangkas dalam menguasai berbagai spektrum teknologi—dari struktur ERP skala enterprise, manajemen lab, hingga tren digital modern—untuk menjawab kebutuhan yang terus berubah.
+
+Presisi & Kualitas (Precision & Quality): Berkomitmen membangun sistem berskala tinggi yang akurat dan stabil, memastikan manajemen data dan alur kerja klien berjalan tanpa hambatan.
+
+Berpusat pada Pengguna (User-Centric): Mengedepankan antarmuka yang intuitif dan responsif dalam setiap CMS dan aplikasi yang dibangun, memastikan pengalaman digital yang mulus di berbagai perangkat.
+
+Inovasi Berkelanjutan (Continuous Innovation): Selalu mencari pendekatan baru yang lebih efektif untuk mengubah proses manual menjadi otomatisasi digital yang cerdas dan terukur.
+
+👥 Susunan Anggota Tim edig developer
+1. Rian Hidayat
+
+Peran Spesifik: Leader of Developer (Tech Lead)
+
+Ringkasan Keahlian: System Analysis & Business Flow
+
+Deskripsi: Sebagai pemimpin tim pengembang, Rian bertanggung jawab mengarahkan visi teknis proyek. Keahlian utamanya terletak pada analisis sistem dan pemetaan alur bisnis (business flow), memastikan bahwa setiap masalah operasional klien dapat diterjemahkan menjadi arsitektur solusi digital yang tepat guna, efisien, dan terstruktur.
+
+2. Ivan Adi Prayoga
+
+Peran Spesifik: Odoo Developer
+
+Ringkasan Keahlian: Odoo ERP Development & Customization
+
+Deskripsi: Ivan adalah tulang punggung dalam pengembangan ekosistem ERP perusahaan. Dengan keahlian mendalam di platform Odoo, ia berfokus pada kustomisasi modul, integrasi sistem, dan implementasi fitur yang disesuaikan secara spesifik untuk merampingkan proses bisnis dan operasional klien di berbagai sektor.
+
+3. Ikhsan Dwi Saputra
+
+Peran Spesifik: Full-Stack Developer
+
+Ringkasan Keahlian: AI Integration, Front-End, Back-End, & Database Management
+
+Deskripsi: Menangani siklus pengembangan perangkat lunak secara menyeluruh, dari antarmuka pengguna (front-end) yang responsif hingga logika server (back-end) dan pengelolaan basis data (database). Ikhsan juga membawa nilai inovasi tingkat lanjut melalui kemampuannya dalam mengintegrasikan teknologi Kecerdasan Buatan (AI) ke dalam aplikasi untuk menciptakan otomatisasi dan alur kerja yang lebih cerdas.
+
+💼 Layanan Utama edig developer
+Sebagai mitra transformasi digital, kami menyediakan berbagai solusi teknologi yang dirancang untuk meningkatkan efisiensi operasional dan visibilitas digital bisnis Anda. Berikut adalah layanan inti yang kami tawarkan:
+
+Implementasi & Kustomisasi Odoo ERP
+Pengembangan sistem Enterprise Resource Planning (ERP) menggunakan kerangka kerja Odoo. Kami membantu memetakan alur bisnis perusahaan ke dalam sistem, melakukan kustomisasi modul, dan mengintegrasikan seluruh operasional (inventaris, penjualan, SDM, dll) ke dalam satu platform yang terpusat dan efisien.
+
+Ediglab LIMS (Laboratory Information Management System)
+Solusi digitalisasi khusus untuk manajemen laboratorium. Kami menyediakan sistem andal untuk mengelola data sampel, melacak proses pengujian secara real-time, dan mengotomatisasi pelaporan agar operasional lab lebih presisi dan terstandarisasi.
+
+Pengembangan Website & CMS (Content Management System)
+Pembuatan website profesional dan sistem manajemen konten yang responsif, aman, dan mudah dikelola oleh klien. Layanan ini berfokus pada digitalisasi profil bisnis dan penyediaan antarmuka yang berpusat pada pengguna (user-centric).
+
+Aplikasi Web Kustom & Integrasi AI
+Layanan Full-Stack Development menyeluruh, mulai dari perancangan Front-End, logika Back-End, hingga manajemen Database. Kami juga menawarkan integrasi Kecerdasan Buatan (AI) untuk menghadirkan otomatisasi tingkat lanjut dan fitur analitik cerdas pada sistem Anda.
+
+Optimasi SEO (Search Engine Optimization)
+Strategi peningkatan visibilitas digital untuk memastikan website bisnis Anda menduduki peringkat atas di mesin pencari. Kami menerapkan optimasi teknis dan struktural untuk mendatangkan lalu lintas (traffic) organik yang relevan.
+
+Pengembangan Proyek Interaktif (Roblox)
+Eksplorasi pengembangan virtual experience di ekosistem Roblox. Solusi inovatif ini ditujukan untuk klien yang membutuhkan pendekatan gamifikasi, kampanye digital interaktif, atau pembangunan komunitas virtual yang unik.
+
+📊 Portofolio Proyek & Studi Kasus
+Kami bangga telah berkolaborasi dalam berbagai proyek inovatif yang memberikan dampak nyata. Berikut adalah beberapa karya terbaik dari tim edig developer:
+
+1. Digitalisasi Informasi Akademik: Penerapan CMS di Universitas Malang
+Latar Belakang: Universitas Malang membutuhkan pembaruan infrastruktur digital untuk mengelola publikasi informasi, berita kampus, dan data akademik. Sistem lama dirasa kurang intuitif dan menyulitkan pembaruan konten secara real-time.
+
+Tantangan: Membangun platform yang bisa menangani traffic tinggi, mudah digunakan oleh staf admin non-teknis, serta harus responsif diakses melalui perangkat mobile oleh ribuan mahasiswa.
+
+Solusi Kami: Tim merancang dan mengembangkan Content Management System (CMS) kustom yang berpusat pada pengguna. Kami menerapkan arsitektur front-end yang responsif (pendekatan mobile-first) dan back-end yang tangguh untuk mempermudah alur publikasi konten.
+
+Visual Hasil Kerja:
+
+[ 🖼️ Sisipkan Screenshot: Halaman Utama Website Universitas Malang & Tampilan Dashboard Admin CMS di sini ]
+
+Metrik & Dampak (Impact):
+
+Waktu publikasi konten oleh staf berkurang hingga 60% berkat antarmuka CMS yang lebih intuitif.
+
+Peningkatan aksesibilitas mobile yang menghasilkan lonjakan keterlibatan (engagement) pengunjung website.
+
+2. Ediglab LIMS: Platform Manajemen Laboratorium Modern
+Latar Belakang: Operasional laboratorium seringkali terhambat oleh pencatatan manual, pelacakan sampel yang menggunakan kertas, dan kesulitan dalam standarisasi pelaporan hasil uji.
+
+Tantangan: Mengubah alur kerja fisik yang kompleks ke dalam bentuk digital tanpa mengubah standar operasional baku lab, sekaligus meminimalisir risiko kesalahan manusia (human error).
+
+Solusi Kami: Membangun Ediglab LIMS (berbasis SaaS), sebuah ekosistem digital terintegrasi untuk pelacakan sampel end-to-end, manajemen inventaris lab, hingga otomatisasi pencetakan sertifikat hasil uji.
+
+Visual Hasil Kerja:
+
+[ 🖼️ Sisipkan Screenshot: Dashboard Utama Ediglab LIMS & Antarmuka Pelacakan/Tracking Sampel di sini ]
+
+Metrik & Dampak (Impact):
+
+Digitalisasi 100% alur pelacakan sampel (bebas kertas/ paperless).
+
+Memangkas waktu administrasi pelaporan hasil uji secara drastis, meningkatkan produktivitas analis lab.
+
+Tingkat akurasi pelacakan data mencapai 99.9% (mengurangi kehilangan data sampel).
+
+3. Modernisasi ERP: SSO Portal & AI Integration for Odoo
+Latar Belakang: Pengguna Enterprise berskala besar menghadapi kendala efisiensi akibat banyaknya titik akses (login) untuk berbagai aplikasi perusahaan, serta lambatnya pencarian dan analisis dokumen di dalam sistem ERP.
+
+Tantangan: Mengintegrasikan sistem keamanan login terpusat tanpa mengganggu database eksisting, dan memasukkan kecerdasan buatan (AI) yang mampu "membaca" dan menganalisis data langsung dari dalam Odoo.
+
+Solusi Kami: Mengimplementasikan Portal SSO (Single Sign-On) agar karyawan cukup login satu kali untuk mengakses seluruh ekosistem Odoo. Selanjutnya, kami mengintegrasikan AI Agent yang dirancang khusus untuk memproses dokumen dan menyajikan data dari Odoo secara cepat melalui perintah bahasa natural (seperti chat).
+
+Visual Hasil Kerja:
+
+[ 🖼️ Sisipkan Screenshot: Halaman Portal Login SSO & Antarmuka Chat/Analisis Dokumen AI di dalam Odoo di sini ]
+
+Metrik & Dampak (Impact):
+
+Kecepatan akses sistem meningkat berkat portal terpusat, mengurangi keluhan lupa password hingga 80%.
+
+Otomatisasi AI memangkas waktu pencarian dan analisis dokumen dari hitungan jam menjadi hanya beberapa detik.
+
+Alur pengambilan keputusan bisnis (business flow) menjadi lebih cepat berbasis data AI yang akurat.
