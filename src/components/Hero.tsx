@@ -99,12 +99,7 @@ export function Hero() {
             <p
               data-reveal-child
               className="t-kicker flex flex-wrap items-center gap-x-2.5 gap-y-1 text-graphite"
-            >
-              <span className="tnum">MOD.00</span>
-              <span aria-hidden="true" className="text-accent">
-                /
-              </span>
-              <span>Sampul</span>
+            >                          
             </p>
 
             <h1 data-reveal-child className="mt-8 lg:mt-10">
@@ -154,18 +149,9 @@ export function Hero() {
               <dl>
                 <Field label="Divisi">{brand.parent}</Field>
                 <Field label="Fokus">ERP · LIMS · Web · AI</Field>
-                <Field label="Stack">React · Odoo · Python</Field>
+                <Field label="Stack">Next.js  · Odoo · Python Stack</Field>
                 <Field label="Layanan">6 lini</Field>
-                <Field label="Est.">{brand.established}</Field>
-                <Field label="Status">
-                  <span className="inline-flex items-center gap-1.5">
-                    <span
-                      aria-hidden="true"
-                      className="inline-block h-[7px] w-[7px] rounded-full bg-signal"
-                    />
-                    aktif
-                  </span>
-                </Field>
+                <Field label="Est.">{brand.established}</Field>               
               </dl>
             </div>
           </div>

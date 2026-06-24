@@ -13,7 +13,7 @@ export const brand = {
     'Dari ERP Odoo dan LIMS Ediglab hingga web kustom, integrasi AI, dan optimasi SEO — ' +
     'kami hadir sebagai solusi satu pintu untuk pengembangan teknologi di berbagai skala.',
   email: 'ikhsan@ecodigitus.com',
-  established: '2024',
+  established: '2017',
 } as const
 
 export interface NavItem {
